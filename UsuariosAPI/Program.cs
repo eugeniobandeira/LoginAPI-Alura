@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using UsuariosApi.Services;
 using UsuariosAPI.Data;
 using UsuariosAPI.Models;
 
@@ -13,6 +14,8 @@ builder.Services.AddDbContext<UsuarioDBContext>
         opts.UseMySql(connString,
             ServerVersion.AutoDetect(connString));
     });
+
+builder.Services.AddScoped<CadastroService>();
 
 builder.Services
     .AddIdentity<Usuario, IdentityRole>()
