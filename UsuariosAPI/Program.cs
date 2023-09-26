@@ -15,7 +15,7 @@ builder.Services.AddDbContext<UsuarioDBContext>
             ServerVersion.AutoDetect(connString));
     });
 
-builder.Services.AddScoped<CadastroService>();
+builder.Services.AddScoped<UsuarioService>();
 
 builder.Services
     .AddIdentity<Usuario, IdentityRole>()
