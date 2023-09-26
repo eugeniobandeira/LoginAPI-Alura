@@ -46,3 +46,8 @@ C:\Users\Genius\Desktop\Alura\ControleDeUsuario-DotNet\UsuariosAPI\obj\Debug\net
 C:\Users\Genius\Desktop\Alura\ControleDeUsuario-DotNet\UsuariosAPI\obj\Debug\net6.0\UsuariosAPI.pdb
 C:\Users\Genius\Desktop\Alura\ControleDeUsuario-DotNet\UsuariosAPI\obj\Debug\net6.0\UsuariosAPI.genruntimeconfig.cache
 C:\Users\Genius\Desktop\Alura\ControleDeUsuario-DotNet\UsuariosAPI\obj\Debug\net6.0\ref\UsuariosAPI.dll
+C:\Users\Genius\Desktop\Alura\ControleDeUsuario-DotNet\UsuariosAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Genius\Desktop\Alura\ControleDeUsuario-DotNet\UsuariosAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Genius\Desktop\Alura\ControleDeUsuario-DotNet\UsuariosAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Genius\Desktop\Alura\ControleDeUsuario-DotNet\UsuariosAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Genius\Desktop\Alura\ControleDeUsuario-DotNet\UsuariosAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

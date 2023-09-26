@@ -8,14 +8,12 @@ namespace UsuariosApi.Controllers
     [Route("[Controller]")]
     public class UsuarioController : ControllerBase
     {
-
         private UsuarioService _usuarioService;
 
         public UsuarioController(UsuarioService cadastroService)
         {
             _usuarioService = cadastroService;
         }
-
 
         [HttpPost("cadastro")]
         public async Task<IActionResult> CadastraUsuario
@@ -29,8 +27,8 @@ namespace UsuariosApi.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> LoginAsync(LoginUsuarioDto dto)
         {
-            await _usuarioService.LoginAsync(dto);
-            return Ok("Usuário autenticado!");
+            var token = await _usuarioService.Login(dto);
+            return Ok(token);
         }
     }
 }
