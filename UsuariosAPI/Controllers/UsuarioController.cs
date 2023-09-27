@@ -19,16 +19,30 @@ namespace UsuariosApi.Controllers
         public async Task<IActionResult> CadastraUsuario
             (CreateUsuarioDto dto)
         {
+            try
+            {
             await _usuarioService.CadastraUsuario(dto);
             return Ok("Usuário cadastrado!");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Falha ao cadastrar usuário!" +  ex.Message);
+            }
 
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> LoginAsync(LoginUsuarioDto dto)
         {
+            try
+            { 
             var token = await _usuarioService.Login(dto);
             return Ok(token);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Falha ao efetuar login! " + ex.Message);
+            }
         }
     }
 }

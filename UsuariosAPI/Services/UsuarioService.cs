@@ -22,24 +22,34 @@ namespace UsuariosApi.Services
 
         public async Task CadastraUsuario(CreateUsuarioDto dto)
         {
-            Usuario usuario = _mapper.Map<Usuario>(dto);
-
-            IdentityResult resultado = await _userManager.CreateAsync(usuario, dto.Password);
-
-            if (!resultado.Succeeded)
+            try
             {
-                throw new ApplicationException("Falha ao cadastrar usuário!");
+                Usuario usuario = _mapper.Map<Usuario>(dto);
+
+                IdentityResult resultado = await _userManager.CreateAsync(usuario, dto.Password);
+
+                /*if (!resultado.Succeeded)
+                {
+                    throw new ApplicationException("Falha ao cadastrar usuário!");
+                }*/
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Falha ao cadastrar usuário! " + ex.Message);
             }
         }
 
         public async Task<string> Login(LoginUsuarioDto dto)
         {
+            try
+            {
+
             var resultado = await _signInManager.PasswordSignInAsync(dto.Username, dto.Password, false, false);
 
-            if (!resultado.Succeeded)
+            /*if (!resultado.Succeeded)
             {
                 throw new ApplicationException("Usuário não autenticado!");
-            }
+            }*/
 
             var usuario = _signInManager
                 .UserManager
@@ -49,7 +59,11 @@ namespace UsuariosApi.Services
             var token = _tokenService.GenerateToken(usuario);
 
             return token;
-
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Usuário não cadastrado! " + ex.Message);
+            }
         }
     }
 }
